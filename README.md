@@ -1,13 +1,12 @@
 # Set Flags
-= Set Flags =
   
 An exemplar project for setting personal, verifiable flags as part of regular investing in yourself.
 
-== Requirements ==
+## Requirements
 
 See the functioning prototype at https://group-mixin.droneidentity.eu.
 
-== Design ==
+## Design
 
 * Model
 
@@ -21,7 +20,7 @@ RESFTful API's
 
 Front-end
 
-== Implementation ==
+## Implementation
 
 * The source will be organised using Model-View-Controller (MVC) architecture.
 

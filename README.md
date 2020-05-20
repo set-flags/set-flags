@@ -36,16 +36,16 @@ Note. The diagram is created using PlantUML, [after the file is opened inside Gi
 
 RESFTful API
 <!-- markdown-swagger -->
- Endpoint                                     | Method | Auth? | Description               
- -------------------------------------------- | ------ | ----- | --------------------------
- `/flags`                                     | GET    | No    | List all the flags        
- `/flags/{id}`                                | POST   | No    | create a flag             
- `/flags/{id}/{op}`                           | POST   | No    |                           
- `/myflags/{id}`                              | GET    | No    | list all flags of the user
- `/flags/{flag_id}/evidences/{attachment_id}` | POST   | No    | Upload evidence           
- `/flags/{flag_id}/evidences`                 | GET    | No    |                           
- `/users/{user_id}/rewards/{flag_id}`         | GET    | No    |                           
- `/assets/{id}`                               | GET    | No    |                           
+ Endpoint                                     | Method | Auth? | Description                                                                                          
+ -------------------------------------------- | ------ | ----- | -----------------------------------------------------------------------------------------------------
+ `/flags`                                     | GET    | No    | list all the flags                                                                                   
+ `/flags/{id}`                                | POST   | No    | create a flag                                                                                        
+ `/flags/{id}/{op}`                           | PUT    | No    | Update an existing flag with operations for verification (yes, no) after uploaded the evidence (done)
+ `/myflags/{id}`                              | GET    | No    | list all flags of the user                                                                           
+ `/flags/{flag_id}/evidences/{attachment_id}` | POST   | No    | Upload evidence                                                                                      
+ `/flags/{flag_id}/evidences`                 | GET    | No    | list all the evidences since yesterday                                                               
+ `/users/{user_id}/rewards/{flag_id}`         | GET    | No    | Check the total rewards received by the user for the flag                                            
+ `/assets/{id}`                               | GET    | No    | get the asset information                                                                            
 <!-- /markdown-swagger -->
 
 * Controller

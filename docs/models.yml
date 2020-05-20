@@ -57,7 +57,7 @@ paths:
   /flags/{id}/{op}:
     put:
       summary: "Update an existing flag"
-      description: "Update an existing flag with operations for verification (yes, no) after uploaded the evidence (done)"
+      description: "update an existing flag with operations for verification (yes, no) after uploaded the evidence (done)"
       operationId: "updateFlag"
       consumes:
       - "application/json"
@@ -112,7 +112,7 @@ paths:
   /flags/{flag_id}/evidences/{attachment_id}:
     post:
       summary: "upload evidence"
-      description: "Upload evidence"
+      description: "upload evidence"
       operationId: "uploadEvidence"
       consumes:
       - "multipart/form-data"
@@ -169,7 +169,7 @@ paths:
               $ref: "#/definitions/Evidence"
   /users/{user_id}/rewards/{flag_id}:
     get:
-      description: "Check the total rewards received by the user for the flag"
+      description: "check the total rewards received by the user for the flag"
       parameters:
       - name: "user_id"
         in: "path"

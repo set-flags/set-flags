@@ -40,11 +40,11 @@ RESFTful API
  -------------------------------------------- | ------ | ----- | -----------------------------------------------------------------------------------------------------
  `/flags`                                     | GET    | No    | list all the flags                                                                                   
  `/flags/{id}`                                | POST   | No    | create a flag                                                                                        
- `/flags/{id}/{op}`                           | PUT    | No    | Update an existing flag with operations for verification (yes, no) after uploaded the evidence (done)
+ `/flags/{id}/{op}`                           | PUT    | No    | update an existing flag with operations for verification (yes, no) after uploaded the evidence (done)
  `/myflags/{id}`                              | GET    | No    | list all flags of the user                                                                           
- `/flags/{flag_id}/evidences/{attachment_id}` | POST   | No    | Upload evidence                                                                                      
+ `/flags/{flag_id}/evidences/{attachment_id}` | POST   | No    | upload evidence                                                                                      
  `/flags/{flag_id}/evidences`                 | GET    | No    | list all the evidences since yesterday                                                               
- `/users/{user_id}/rewards/{flag_id}`         | GET    | No    | Check the total rewards received by the user for the flag                                            
+ `/users/{user_id}/rewards/{flag_id}`         | GET    | No    | check the total rewards received by the user for the flag                                            
  `/assets/{id}`                               | GET    | No    | get the asset information                                                                            
 <!-- /markdown-swagger -->
 

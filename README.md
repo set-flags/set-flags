@@ -30,7 +30,8 @@ We follow the model-view-controller architecture pattern to design the chatbot.
 * Model
 
 ![Entity Relationship diagram](https://github.com/set-flags/set-flags/blob/master/docs/models.png)
-Note. The diagram is created using PlantUML, [after the file is opened inside GitPod](https://gitpod.io/#https://github.com/set-flags/set-flags/blob/master/docs/models.puml), type "Alt + D" to edit the diagram.
+
+NOTE. The diagram is created using PlantUML, [after the file is opened inside GitPod](https://gitpod.io/#https://github.com/set-flags/set-flags/blob/master/docs/models.puml), type "Alt + D" to edit the diagram.
 
 * View
 

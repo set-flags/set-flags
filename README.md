@@ -35,6 +35,18 @@ Note. The diagram is created using PlantUML, [after the file is opened inside Gi
 * View
 
 RESFTful API
+<!-- markdown-swagger -->
+ Endpoint                                     | Method | Auth? | Description               
+ -------------------------------------------- | ------ | ----- | --------------------------
+ `/flags`                                     | GET    | No    | List all the flags        
+ `/flags/{id}`                                | POST   | No    | create a flag             
+ `/flags/{id}/{op}`                           | POST   | No    |                           
+ `/myflags/{id}`                              | GET    | No    | list all flags of the user
+ `/flags/{flag_id}/evidences/{attachment_id}` | POST   | No    | Upload evidence           
+ `/flags/{flag_id}/evidences`                 | GET    | No    |                           
+ `/users/{user_id}/rewards/{flag_id}`         | GET    | No    |                           
+ `/assets/{id}`                               | GET    | No    |                           
+<!-- /markdown-swagger -->
 
 * Controller
 

@@ -10,7 +10,7 @@ See the functioning prototype at https://group-mixin.droneidentity.eu.
 
 * Model
 
-Database tables
+[Schema]: https://github.com/set-flags/set-flags/raw/master/docs/model.png "Database tables"
 
 * View
 

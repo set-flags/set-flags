@@ -10,7 +10,7 @@ See the functioning prototype at https://group-mixin.droneidentity.eu.
 
 * Model
 
-[Schema]: https://github.com/set-flags/set-flags/raw/master/docs/model.png "Database tables"
+[Schema]: https://github.com/set-flags/set-flags/raw/master/docs/model.png "Entity Relationship diagram"
 
 * View
 

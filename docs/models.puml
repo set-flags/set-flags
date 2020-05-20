@@ -1,35 +1,77 @@
 @startuml
 
-package "Set Flag Chatbot" as sfbot {
-    [User] as User
-    [Owner] as Owner
-    [Witness] as Witness
-    [Flag:\n- Periods] as Flag
-    [Evidence] as Evidence
-    [Packet] as Packet
+entity User {
+   * id: uuid
+   full_name: string
+   avatar_url: string
+   --
+   /users: GET
+   /users/:id: PUT
 }
-package "Mixin Messenger" as mm {
-    [Profile:\n- ID\n - Name\n- Avatar] as Profile
-    [Wallet:\n- Asset\n - Amount] as Wallet
-    [Asset:\n- Symbol\n- Price] as Asset
-    [Message:\n- Receive\n- Send] as Message
-    [Conversation:\n- ID] as Conversation
-    [Transaction:\n- TraceID] as Transaction
+
+entity Flag {
+    * id: uuid
+    * payer_id: uuid
+    task: string
+    days: int
+    * asset_id: uuid
+    amount: number
+    times_achieved: int
+    created_at: datetime
+    updated_at: datetime
+    --
+    /flags/:id: POST
+    /flags: GET
+    /flags/:id/done: PUT
 }
-User <|- Owner
-User <|- Witness
-Flag "1" -- "1" Owner
-Flag "1" -- "*" Packet
-Packet -- Message
-User "1" -- "1" Profile
-Profile *-- Wallet
-Wallet -- Asset
-Flag *-- Witness
-Flag *-- Evidence
-Flag "1" -- "1" Asset
-Evidence -- Message
-Conversation *-- Message
-Conversation "1" *-- "2" Profile
-Transaction "1" *-- "2" Profile
-Transaction "1" -- "1" Asset
+
+entity Asset {
+    * id: uuid
+    symbol: string
+    price_usd: amount
+    paid_at: datetime
+    --
+    /assets/:id: GET
+}
+
+entity Evidence {
+    * attachment_id: uuid
+    * flag_id: uuid
+    type: string
+    created_at: datetime
+    // updated_at: datetime
+    --
+    /flags/:flag_id/evidences/:attachment_id: POST
+    /flags/:flag_id/evidences: GET
+}
+
+entity Witness {
+    * flag_id: uuid
+    * payee_id: uuid
+    --
+    /flags/:id/yes: PUT
+    /flags/:id/no: PUT
+}
+
+entity Payer {
+    paid: bool
+    --
+    /flags/:id/rewards GET
+}
+
+entity Payee {
+    verified: bool
+    --
+    /flags/:id/awards GET
+}
+
+Payer --|> User
+Payee --|> User
+
+Flag "1" --- "*" Evidence: upload
+Flag "*" --- "1" Asset: pay
+Flag "*" --- "*" Witness: verify
+Witness "1" -- "*" Asset: award 
+Witness "1" -- "*" User: reward 
+
 @enduml

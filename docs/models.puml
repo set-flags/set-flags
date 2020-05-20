@@ -7,6 +7,8 @@ entity User {
    --
    /users: GET
    /users/:id: PUT
+   /myflags/:id: GET
+   /users/:id/rewards/:flag_id GET
 }
 
 entity Flag {
@@ -28,7 +30,8 @@ entity Flag {
 entity Asset {
     * id: uuid
     symbol: string
-    price_usd: amount
+    price_usd: number
+    balance: number
     paid_at: datetime
     --
     /assets/:id: GET
@@ -37,10 +40,12 @@ entity Asset {
 entity Evidence {
     * attachment_id: uuid
     * flag_id: uuid
+    file: file
     type: string
     created_at: datetime
     // updated_at: datetime
     --
+    /flags/:id/done PUT
     /flags/:flag_id/evidences/:attachment_id: POST
     /flags/:flag_id/evidences: GET
 }
@@ -49,20 +54,15 @@ entity Witness {
     * flag_id: uuid
     * payee_id: uuid
     --
-    /flags/:id/yes: PUT
-    /flags/:id/no: PUT
+    /flags/:id/:op: PUT // yes, no
 }
 
 entity Payer {
     paid: bool
-    --
-    /flags/:id/rewards GET
 }
 
 entity Payee {
     verified: bool
-    --
-    /flags/:id/awards GET
 }
 
 Payer --|> User

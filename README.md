@@ -16,18 +16,25 @@ See the functioning prototype at https://group-mixin.droneidentity.eu.
 * 发起过立志红包的证人获得更多奖励。
 * 只有经验证成功完成了任务，系统才退还定投者当天押金。
 * 每个红包至少价值1 USDT或者1 SFC。
-* 消息根据用户语言自动翻译!
-* 如果立志人不折不扣地完成全部任务，全部红包价值完璧归赵, 并免费获得全年完整的证据链 ! 
+* [optional] 消息根据用户语言自动翻译!
+* [optional] 如果立志人不折不扣地完成全部任务，全部红包价值完璧归赵, 并免费获得全年完整的证据链 ! 
+
+### Use Cases
+
+UC1
 
 ## Design
+
+We follow the model-view-controller architecture pattern to design the chatbot.
 
 * Model
 
 ![Entity Relationship diagram](https://github.com/set-flags/set-flags/blob/master/docs/models.png)
+Note. The diagram is created using PlantUML, [after the file is opened inside GitPod](https://gitpod.io/#https://github.com/set-flags/set-flags/blob/master/docs/models.puml), type "Alt + D" to edit the diagram.
 
 * View
 
-RESFTful API's
+RESFTful API
 
 * Controller
 

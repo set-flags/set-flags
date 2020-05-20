@@ -1,0 +1,35 @@
+@startuml
+
+package "Set Flag Chatbot" as sfbot {
+    [User] as User
+    [Owner] as Owner
+    [Witness] as Witness
+    [Flag:\n- Periods] as Flag
+    [Evidence] as Evidence
+    [Packet] as Packet
+}
+package "Mixin Messenger" as mm {
+    [Profile:\n- ID\n - Name\n- Avatar] as Profile
+    [Wallet:\n- Asset\n - Amount] as Wallet
+    [Asset:\n- Symbol\n- Price] as Asset
+    [Message:\n- Receive\n- Send] as Message
+    [Conversation:\n- ID] as Conversation
+    [Transaction:\n- TraceID] as Transaction
+}
+User <|- Owner
+User <|- Witness
+Flag "1" -- "1" Owner
+Flag "1" -- "*" Packet
+Packet -- Message
+User "1" -- "1" Profile
+Profile *-- Wallet
+Wallet -- Asset
+Flag *-- Witness
+Flag *-- Evidence
+Flag "1" -- "1" Asset
+Evidence -- Message
+Conversation *-- Message
+Conversation "1" *-- "2" Profile
+Transaction "1" *-- "2" Profile
+Transaction "1" -- "1" Asset
+@enduml
